@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+    /*! normalize.css v2.1.0 | MIT License | git.io/normalize */
+
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+[hidden] {
+    display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    font-family: sans-serif; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    -ms-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+
+b,
+strong {
+    font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+
+dfn {
+    font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+
+pre {
+    white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+
+img {
+    border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+
+figure {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 2 */
+    margin: 0; /* 3 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+button,
+select {
+    text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700|Inconsolata:400,700);
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    width: 600px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 48px;
+    margin: 144px 0 24px 0;
+}
+
+h2 {
+    font-size: 28px;
+    line-height: 48px;
+    margin: 0 0 24px 0;
+}
+
+h3 {
+    font-size: 22px;
+    line-height: 24px;
+    margin: 48px 0 24px 0;
+}
+
+p, ul {
+    margin: 0 0 24px 0;
+}
+
+ul ul {
+    margin: 0 0 0 0;
+}
+
+pre {
+    margin: 0 0 24px 0;
+}
+
+code {
+    font-family: Inconsolata, monospace;
+}
+
+@media print {
+    body {
+        margin: 72px 72px;
+    }
+    @page {
+        margin: 48px 48px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <h1>Yocto/Raytrace: Tiny Raytracer</h1>
+<p>In questo homework, impareremo i principi di base della sintesi di immagini
+implementando un semplice path tracer. In particolare, impareremo come</p>
+<ul>
+<li>usare funzioni di intersezione di raggi,</li>
+<li>scrivere semplici shaders,</li>
+<li>scrivere un semplice renderer</li>
+</ul>
+<h2>Framework</h2>
+<p>Il codice utilizza la libreria <a href="https://github.com/xelatihy/yocto-gl"><strong>Yocto/GL</strong></a>,
+che è inclusa in questo progetto nella directory <code>yocto</code>.
+Si consiglia di consultare la documentazione della libreria.
+Inoltre, dato che la libreria verrà migliorata durante il corso,
+consigliamo di mettere <strong>star e watch su github</strong> in modo che
+arrivino le notifiche di updates.</p>
+<p>Il codice è compilabile attraverso <a href="https://apps.apple.com/it/app/xcode/id497799835?mt=12">Xcode</a>
+su OsX e <a href="https://visualstudio.microsoft.com/it/vs/">Visual Studio 2019</a> su Windows,
+con i tools <a href="www.cmake.org">cmake</a> e <a href="https://ninja-build.org">ninja</a>
+come mostrato in classe e riassunto, per OsX,
+nello script due scripts <code>scripts/build.sh</code>.
+Per compilare il codice è necessario installare Xcode su OsX e
+Visual Studio 2019 per Windows, ed anche i tools cmake e ninja.
+Come discusso in classe, si consiglia l'utilizzo di
+<a href="https://code.visualstudio.com">Visual Studio Code</a>, con i plugins
+<a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools">C/C++</a> e
+<a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools">CMake Tools</a>
+extensions, che è già predisposto per lavorare su questo progetto.</p>
+<p>Questo homework consiste nello sviluppare vari shaders che, per semplicità,
+sono tutti contenuti nel file <code>yocto_raytrace.cpp</code>. Gli shader che scriverete
+sono eseguiti per ogni pixel dell'immagine dalla funzione <code>render_samples()</code>
+che diamo già implementata. A sua volta questa funzione è chiamata da
+<code>yraytrace.cpp</code> come interfaccia a riga di comando, e da <code>yiraytraces.cpp</code>
+che mostra una semplice interfaccia grafica.</p>
+<p>Questo repository contiene anche tests che sono eseguibili da riga di comando
+come mostrato in <code>run.sh</code>. Le immagini generate dal runner sono depositate
+nella directory <code>out/</code>. Questi risultati devono combaciare con le immagini nella
+directory <code>check/</code>. Per la consegna dell'homework basta renderizzare solo le
+immagini a bassa risoluzione che andranno nella directory <code>out/lowres</code>.
+In <code>check/highres</code> ci sono immagini calcolate ad alta risoluzione per farvi
+vedere il miglioramento.</p>
+<h2>Funzionalità (24 punti)</h2>
+<p>In this homework you will implement the following features:</p>
+<ul>
+<li><strong>Color Shader</strong> nella funzione <code>shade_color()</code>:<ul>
+<li>implementare uno shader che ritorna il colore del materiale del punto di intersezione</li>
+<li>use <code>intersect_scene_bvh()</code> for intersection</li>
+</ul>
+</li>
+<li><strong>Normal Shader</strong> nella funzione <code>shade_normal()</code>:<ul>
+<li>implementare uno shader che ritorna la normale del punto di intersezione,
+  tradotta in colore aggiungendo 0.5 e moltiplicando per 0.5</li>
+</ul>
+</li>
+<li><strong>Texcoord Shader</strong> nella funzione <code>shade_texcoord()</code>:<ul>
+<li>implementare uno shader che ritorna le texture coordinates del punto di intersezione,
+  tradotte in colori per i canali RG; usare la funzione <code>fmod()</code> per forzarle
+  nel range [0, 1]</li>
+</ul>
+</li>
+<li><strong>Eyelight Shader</strong> nella funzione <code>shade_eyelight()</code>:<ul>
+<li>implementare uno shader che calcola il diffuse shading assumendo di avere
+  una fonte di illuminazione nelle fotocamera</li>
+</ul>
+</li>
+<li><strong>Raytrace Shader</strong> nella funzione <code>shade_raytrace()</code>:<ul>
+<li>implementare uno shader ricorsivo che simula l'illuminazione per una varietà
+  di materiali seguendo gli steps descritti nelle lecture notes riassunti qui
+  di seguito</li>
+<li>calcolare posizione, normale and texture coordinates</li>
+<li>calcolare il valore dei materiali multiplicando le constanti trovate
+  nel material con i valori nelle textures</li>
+<li>implementare i seguenti materiali nell'ordinane presentato nelle slides:
+  polished transmission, polished metals, rough metals, rough plastic, and matte</li>
+<li>potete usare tutte le funzioni di Yocto/Shading ed in particolare <code>fresnel_schlick()</code>,
+  e tutte le <code>sample_XXX()</code></li>
+<li>per le supeerfici matte, usa la funzione <code>sample_hemisphere_cos()</code> e ignora
+  la normalizzazione di 2 pi</li>
+<li>per i metalli rough, implementeremo una versione semplificata che utilizza
+  una microfacet normal scelta in modo accurato, ma poi si comparta come se
+  fosse un metallo polished che usa questa normale<ul>
+<li><code>mnormal = sample_hemisphere_cospower(exponent, normal, rand2f(rng));</code></li>
+<li><code>exponent   = 2 / (roughness * roughness)</code></li>
+</ul>
+</li>
+<li>per le superifici plastiche, utilizziamo la stessa normale e poi un test con
+  Fresnel che sceglie se fare la riflessione o la diffusa</li>
+</ul>
+</li>
+</ul>
+<h2>Extra Credit (10 punti)</h2>
+<ul>
+<li><strong>refraction</strong> (facile): implementaree la rifrazione polished nella funzione
+  <code>shade_raytrace()</code>:<ul>
+<li>implementare la rifrazione usando <code>refract()</code> per la direzione,</li>
+<li><code>ior</code> per ottenere l'indice di rifrazione dalla riflettività (0.04)</li>
+<li>e ricordandosi di invertire l'indice di rifrazione quando si lascia la supereficie</li>
+<li>potete inspifrarvi a <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html#dielectrics">Raytracing in one Weekend</a></li>
+</ul>
+</li>
+<li><strong>cell shading</strong> (medio): implementare uno shader non realistico seguendo
+  <a href="https://roystan.net/articles/toon-shader.html">cell shading</a></li>
+<li><strong>matcap shading</strong> (medio): implemntare uno shader non realistico seguendo
+  <a href="http://viclw17.github.io/2016/05/01/MatCap-Shader-Showcase/">matcap shading 1</a>
+  o <a href="https://github.com/hughsk/matcap">matcap shading 2</a></li>
+<li><strong>your own shader</strong> (medio): scrivete altri shaders basati su idee
+  trovate su <a href="www.shadertoy.com">ShaderToy</a></li>
+<li><strong>other BVHs</strong> (medio): il tempo di esecuzione è dominato da ray-scene
+  intersection; testiamo altri BVH per vedere se ci sono speed up significativi<ul>
+<li>abbiamo già integrato Intel Embree, quindi questo non conta</li>
+<li>integrare il BVh <a href="https://github.com/lighttransport/nanort">nanort</a> o
+  <a href="https://github.com/madmann91/bvh">bvh</a></li>
+<li>testare le scene più larghe e riportare nel readme i tempi confrontandoli
+  con i nostri</li>
+<li>per integrarli, potete scrivere nuovi shaders o inserire i nuovi Bvh
+  dentro il nostro bvh</li>
+</ul>
+</li>
+<li><strong>thick lines and points</strong> (difficile): il rendering di punti è linee è
+  attulamente approssimato; in questo homework andremo a calcolarli in modo corretto<ul>
+<li>renderizzare punti come sfere e linee come capped cones</li>
+<li>algoritmi di intersezione si trovano <a href="https://iquilezles.org/www/articles/intersectors/intersectors.htm">qui</a> con i nomi Sphere e Rounded Cone</li>
+<li>per integrarli nel nostro codice si deve (a) inserire le funzioni di 
+  intersezione <code>intersect_bvh</code> in <code>yocto_bvh</code>, (b) cambiare le funzion
+  <code>eval_position</code> e <code>eval_normal</code> con le normali appropriate, oppure (c)
+  cambiare i dati che ritorna l'intersezione e aggiungere normal e position</li>
+<li>se si implementa questo punto, chiedere al docente file di tests </li>
+</ul>
+</li>
+<li><strong>volume rendering</strong> (difficile): implementare il rendering di volumi semplici seguendo
+    <a href="https://raytracing.github.io/books/RayTracingTheNextWeek.html#volumes">Ray tracing The Next Week</a></li>
+<li><strong>nuove scene</strong> (molto facile, pochi punti): creare scene aggiuntive<ul>
+<li>creare immagini aggiuntive con il vostro renderer da modelli assemblati da voi</li>
+<li>per creare modelli nuovi, potete editare scene in Blender e salvarle in glTF,
+  usando <code>yscene</code> di Yocto per poi aggiustare a mano se serve</li>
+<li>il vostro renderer fa molto bene environment maps e materiali diffusi
+  quindi io mi concentrerei su quelli - trovate ottime environment maps su
+  <a href="https://polyhaven.com">PolyHaven</a></li>
+<li>come punto di partenza potete assemblare nuove scene mettendo nuovi
+  modelli 3D, textures e environment maps - as esempio da
+  <a href="https://polyhaven.com">PolyHaven</a> o <a href="https://sketchfab.com">Sketchfab</a></li>
+</ul>
+</li>
+</ul>
+<p>Per la consegna, il contenuto dell'extra credit va descritto in un PDF chiamato
+<strong>readme.pdf</strong>, in aggiunta alla consegna di codice e immagini.
+Basta mettere per ogni extra credit, il nome dell'extra credit,
+un paragrafo che descriva cosa avete implementato, una o più immagini dei
+risulato, e links a risorse utilizzate nell'implementazione.</p>
+<p>Potete produrre il PDF con qualsiasi strumento. Una possibilità comoda è di
+scrivere il file in Markdown e convertilo in PDF con VSCode plugins o altri
+strumenti che usate online. In questo modo potete linkare direttamente alla
+immagini che consegnate.</p>
+<h2>Istruzioni</h2>
+<p>Per consegnare l'homework è necessario inviare una ZIP che include il codice e
+le immagini generate, cioè uno zip <em>con le sole directories <code>yocto_raytrace</code> e <code>out</code></em>.
+Per chi fa l'extra credit, includere anche <code>apps</code>, ulteriori immagini, e un
+file <strong><code>readme.pdf</code></strong> che descrive la lista di extra credit implementati.
+Per chi crea nuovi modelli, includere anche le directory con i nuovo modelli creati.
+Il file va chiamato <code>&lt;cognome&gt;_&lt;nome&gt;_&lt;numero_di_matricola&gt;.zip</code>
+e vanno escluse tutte le altre directory. Inviare il file su Google Classroom.</p>
+</body>
+</html>
